@@ -43,3 +43,9 @@ class TestContact(unittest.TestCase):
             test_contact = User("Test","user") # new contact
             test_contact.save_credential()
             self.assertEqual(len(User.accounts),2)
+
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+   
