@@ -1,12 +1,14 @@
 
 class User:
     '''
- 
     Args:
-    self.loginUsername: new loginUserName
-    self.password: new password
+       self.loginUsername: new loginUserName
+       self.password: new password
     '''
+    pass
+
     
-    def __init__(self, loginUserName, password):
-     self.loginUserName = loginUserName
+
+    def __init__(self,userName,password):
+     self.userName = userName
      self.password = password
