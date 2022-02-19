@@ -1,25 +1,37 @@
-import unittest
-from user import User
+import unittest # Importing the unittest module
+from PasswordLocker import User # Importing the contact class
 
-class TestUserDetails(unittest.TestCase):
+class TestContact(unittest.TestCase):
+
     '''
-    Test case tests if the user name password match
+    Test class that defines test cases for the contact class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that helps in creating test cases
     '''
-    newUserDetails = [] # add empty array to hold new user details
+
 
     def setUp(self):
         '''
-        set up method run before each test case
+        Set up method to run before each test cases.
         '''
-        self.newUserDetails = User("Pascal","abc123") # User object
+        self.new_contact = User("Pascal", "abc123") # create contact object
 
-    def test__init__(self):
+
+    def test_init(self):
         '''
-        Test if the object is initialized properly
-        '''  
-        self.assertEqual(self.newUserDetails.userName,"Pascal")
-        self.assertEqual(self.newUserDetails.password, "abc123")
+        test_init test case to test if the object is initialized properly
+        '''
 
-if __name__== '__main__':
-    unittest.main()        
-        
+        self.assertEqual(self.new_contact.userName,"Pascal")
+        self.assertEqual(self.new_contact.UserPassword,"abc123")
+
+    def test_save_credential(self):
+        '''
+        test_save_contact test case to test if the contact object is saved into
+         the contact list
+        '''
+        self.new_contact.save_credential() # saving the new contact
+        self.assertEqual(len(User.accounts),1)   
+
+    
