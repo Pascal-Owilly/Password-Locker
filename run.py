@@ -21,7 +21,11 @@ def del_account(account):
     '''
     account.delete_account()
 
- 
+def find_account(username):
+    '''
+    Function that finds a contact by username and returns the account
+    '''
+    return User.find_by_username(username)   
 
 
 def main():
