@@ -21,6 +21,37 @@ def main():
                         print("confirm password")
                         pwd_confirm = input()
                         
-                
+                        while pwd != pwd_confirm:
+                                print("Invalid password, ensure passwords match")
+                                print("Create your password")  
+                                pwd = input()
+                                print("Confirm password")
+                                pwd_confirm = input()
+
+                        else:
+                                print(f"Hello {u_name}, you have successfully created your account ")
+                                print("Login to your account")
+                                print("Input username")
+                                login_u_name = input()
+                                print("Enter your password")
+                                login_pwd = input()
+
+                        while u_name != login_u_name or login_pwd != pwd:
+                                print("Invalid credentials, try again")
+                                print("Enter your username")
+                                login_u_name = input()
+                                print("Enter Password")
+                                login_pwd = input()
+                                print("\n")
+
+                        else:
+                                print(f"Hello {login_u_name}, welcome aboard")
+
+                elif shortCode == "ex":
+                        break         
+
+if __name__== '__main__':
+        main()                            
+
 
 
