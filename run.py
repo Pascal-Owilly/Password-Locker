@@ -34,6 +34,13 @@ def check_existing_accounts(username):
     return User.contact_exist(username)   
 
 
+def show_accounts():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return User.show_accounts()      
+
+
 def main():
         while True:
                 print("Welcome to your account creation")
