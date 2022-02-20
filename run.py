@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.9
 import unittest
 from PasswordLocker import User
 
@@ -14,7 +15,7 @@ def main():
                         print("Create new account")
                         print("\n")
                         print("Input your username")
-                        u_name = input().capitalize
+                        u_name = input()
                         print("\n")
                         print("Create your password")
                         pwd = input()
@@ -29,7 +30,7 @@ def main():
                                 pwd_confirm = input()
 
                         else:
-                                print(f"Hello {u_name}, you have successfully created your account ")
+                                print("You have successfully created your account ")
                                 print("Login to your account")
                                 print("Input username")
                                 login_u_name = input()
@@ -45,7 +46,7 @@ def main():
                                 print("\n")
 
                         else:
-                                print(f"Hello {login_u_name}, welcome aboard")
+                                print("Hello, welcome aboard")
 
                 elif shortCode == "ex":
                         break         
