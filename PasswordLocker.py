@@ -14,4 +14,9 @@ class User:
     def show_accounts(cls):
         return cls.userAccounts   
 
-    
+    @classmethod
+    def show_accounts(cls):
+        '''
+        method that returns the accounts list
+        '''
+        return cls.userAccounts
