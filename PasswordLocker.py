@@ -1,3 +1,6 @@
+from fnmatch import fnmatchcase
+
+
 class User:
     '''
     The User class generates a new instance of the class
@@ -22,6 +25,21 @@ class User:
         return cls.userAccounts
 
 class Credentials:
-    pass     
+    '''
+    a class that generates new instance of credentials
+    '''
+
+    def __init__(self,f_name,l_name,email,p_numner):
+          '''
+        __init__method that defines properties fr objects
+          '''
+          self.sname = f_name
+          self.l_name = l_name
+          self.email = email
+          self.p_number = p_numner
+          
+        
+        
+
 
         

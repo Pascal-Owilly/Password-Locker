@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.9
 from PasswordLocker import User
+from PasswordLocker import Credentials
 import random
 import string
 
@@ -46,21 +47,16 @@ def show_accounts():
 def get_random_string(length):
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
+    print("WELCOME")
+    print("\n")
     print("You can use your generated password below or create a new one")
     print("\n")
     print(result_str)
     print("\n")
 get_random_string(5)
-    
-    
-
-
-
 
 def main():
         while True:
-                print("Welcome to your account creation")
-                print("\n")
                 print("Use the following short codes to naviagate to your account:")
                 print("ac: new user account")
                 print("lgn: login to your existing accout") 
