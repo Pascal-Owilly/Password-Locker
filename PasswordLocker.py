@@ -11,4 +11,7 @@ class User:
     def save_account(self):
         User.userAccounts.append(self)
 
+    def show_accounts(cls):
+        return cls.userAccounts   
+
     
