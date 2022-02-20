@@ -9,6 +9,11 @@ def create_contact(username,password):
     new_account = User(username,password)
     return new_account
 
+def save_account(account):
+    '''
+    Function to save account
+    '''
+    account.save_account()  
 
 
 
