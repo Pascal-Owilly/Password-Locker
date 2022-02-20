@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.9
 import unittest
 from PasswordLocker import User
+import random
+import string
 
 def create_contact(username,password):
     '''
@@ -31,14 +33,24 @@ def check_existing_accounts(username):
     '''
     Function that check if an account exists with that username and return a Boolean
     '''
-    return User.contact_exist(username)   
+    return User.account_exist(username)   
 
 
 def show_accounts():
     '''
     Function that returns all the saved accounts
     '''
-    return User.show_accounts()      
+    return User.show_accounts()    
+
+def get_random_string(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    print("You can use your generated password below or create a new one")
+    print(result_str)
+
+get_random_string(5)
+
+
 
 
 def main():
@@ -46,7 +58,11 @@ def main():
                 print("Welcome to your account creation")
                 print("\n")
                 print("Use the following short codes to naviagate to your account:")
-                print("ac: new user account, lgn: login to your existing accout, sv: save account account, exit: to exit accout, da: dispaly all accounts")
+                print("ac: new user account")
+                print("lgn: login to your existing accout")
+                print(" sv: save account account")
+                print("exit: to exit accout") 
+                print("da: dispaly all accounts")
                 print("\n")
                 shortCode = input().lower()
 
@@ -70,8 +86,11 @@ def main():
                                 print("\n")
 
                         else:
+                                print("\n")
                                 print("You have successfully created your account ")
+                                print("\n")
                                 print("Login to your account")
+                                print("\n")
                                 print("Input username")
                                 login_u_name = input()
                                 print("Enter your password")

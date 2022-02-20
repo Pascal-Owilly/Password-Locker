@@ -20,3 +20,5 @@ class User:
         method that returns the accounts list
         '''
         return cls.userAccounts
+
+        
