@@ -1,5 +1,4 @@
 #!/usr/bin/env python3.9
-import unittest
 from PasswordLocker import User
 import random
 import string
@@ -40,8 +39,10 @@ def show_accounts():
     '''
     Function that returns all the saved accounts
     '''
-    return User.show_accounts()    
+    return User.show_accounts() 
 
+
+# generate a random password
 def get_random_string(length):
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
@@ -137,6 +138,7 @@ def main():
                         print("Login successful")               
                
                 elif shortCode == "exit":
+                        print("Exiting program..........")
                         break         
 
 if __name__== '__main__':

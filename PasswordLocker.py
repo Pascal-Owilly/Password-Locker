@@ -21,4 +21,7 @@ class User:
         '''
         return cls.userAccounts
 
+class Credentials:
+    pass     
+
         
