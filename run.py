@@ -27,6 +27,12 @@ def find_account(username):
     '''
     return User.find_by_username(username)   
 
+def check_existing_accounts(username):
+    '''
+    Function that check if an account exists with that username and return a Boolean
+    '''
+    return User.contact_exist(username)   
+
 
 def main():
         while True:
