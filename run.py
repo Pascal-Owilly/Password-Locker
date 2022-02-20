@@ -2,12 +2,22 @@
 import unittest
 from PasswordLocker import User
 
+def create_contact(username,password):
+    '''
+    Function to create a new account
+    '''
+    new_account = User(username,password)
+    return new_account
+
+
+
+
 def main():
         while True:
                 print("Welcome to your account creation")
                 print("\n")
                 print("Use the following short codes to naviagate to your account:")
-                print("ac: new user account, lgn: login to your existing accout, adc: add new account, exit: to exit accout")
+                print("ac: new user account, lgn: login to your existing accout, sv: save account account, exit: to exit accout, da: dispaly all accounts")
                 print("\n")
                 shortCode = input().lower()
 
@@ -28,6 +38,7 @@ def main():
                                 pwd = input()
                                 print("Confirm password")
                                 pwd_confirm = input()
+                                print("\n")
 
                         else:
                                 print("You have successfully created your account ")
@@ -48,7 +59,25 @@ def main():
                         else:
                                 print("Hello, welcome aboard")
 
-                elif shortCode == "ex":
+                elif shortCode == "":
+                        print("Empty request, input short code")  
+                
+                elif shortCode == 'da':
+
+                            if show_accounts():
+                                    print("Here is a list of all your accounts")
+                                    print('\n')
+
+                                    for account in show_accounts():
+                                            print(f"{account.username} {account.password}")
+
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print("You dont seem to have any contacts saved yet")
+                                    print('\n')
+               
+                elif shortCode == "exit":
                         break         
 
 if __name__== '__main__':
