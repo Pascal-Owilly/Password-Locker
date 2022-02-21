@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.9
 from PasswordLocker import User
-from PasswordLocker import Credentials
+from credential import Credentials
 import random
 import string
 
-def create_contact(username,password):
+def create_account(username,password):
     '''
     Function to create a new account
     '''
@@ -35,6 +35,12 @@ def check_existing_accounts(username):
     '''
     return User.account_exist(username)   
 
+def show_user():
+        '''
+        function that returns users details
+        ''' 
+        return Credentials.f_name + Credentials.l_name  
+        
 
 def show_accounts():
     '''
@@ -45,25 +51,36 @@ def show_accounts():
 
 # generate a random password
 def get_random_string(length):
-    letters = string.ascii_lowercase
-    result_str = ''.join(random.choice(letters) for i in range(length))
-    print("WELCOME")
-    print("\n")
+    randon_uppercase_letter = string.ascii_uppercase
+    result_str = ''.join(random.choice(randon_uppercase_letter) for i in range(length))
+ 
+
+    print("*"*30)
+    print("WELCOME TO YOUR ACCOUNT CREATION")
+    print("*"*30)
     print("You can use your generated password below or create a new one")
     print("\n")
+    
     print(result_str)
-    print("\n")
-get_random_string(5)
+    print("\n") 
+    print("_"*60)
+get_random_string(7)
+  
 
 def main():
         while True:
                 print("Use the following short codes to naviagate to your account:")
+                print("*"*20)
                 print("ac: new user account")
+                print("*"*20)
                 print("lgn: login to your existing accout") 
-                print("da: dispaly all accounts")
+                print("*"*20)
+                print("va: view all accounts")
+                print("*"*20)
                 print("exit: to exit accout")
-                print("\n")
+                print("*"*20)
                 shortCode = input().lower()
+                print("\n")
 
                 if shortCode == "ac":
                         print("Create new account")
@@ -86,15 +103,23 @@ def main():
 
                         else:
                                 print("\n")
+                                print("_"*60)
+                                print("_"*60)
+                              
                                 print("You have successfully created your account ")
                                 print("\n")
+                                print("_"*60)
+                                print("_"*60)
+                                print("_"*60)
                                 print("Login to your account")
                                 print("\n")
                                 print("Input username")
                                 login_u_name = input()
                                 print("Enter your password")
                                 login_pwd = input()
-
+                                print("_"*60)
+                                print("_"*60)
+                                print("_"*60)
                         while u_name != login_u_name or login_pwd != pwd:
                                 print("Invalid credentials, try again")
                                 print("Enter your username")
@@ -102,14 +127,20 @@ def main():
                                 print("Enter Password")
                                 login_pwd = input()
                                 print("\n")
+                                print("_"*60)
+                                print("_"*60)
+                                print("_"*60)
 
                         else:
                                 print("Hello, welcome aboard")
+                                print("_"*60)
+                                print("_"*60)
+                                print("_"*60)
 
                 elif shortCode == "":
                         print("Empty request, input short code")  
                 
-                elif shortCode == 'da':
+                elif shortCode == 'va':
 
                             if show_accounts():
                                     print("Here is a list of all your accounts")
@@ -123,7 +154,9 @@ def main():
                                     print('\n')
                                     print("You dont have any accounts saved yet")
                                     print('\n')
-
+                                    print("_"*60)
+                                    print("_"*60)
+                                    print("_"*60)
                 elif shortCode == "lgn":
                         print("To login to your account, input your credentials below:") 
                         print("Enter your username")
